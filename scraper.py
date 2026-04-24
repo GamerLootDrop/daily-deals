@@ -26,15 +26,15 @@ def scrape_deals():
         print(f"⚠️ 出错: {e}")
 
 def generate_html(deals):
-    # ==========================================
+   # ==========================================
     # 💰 这里就是你的“专属赚钱广告位”
     # ==========================================
     sponsored_card = '''
         <div class="card" style="border-color: #f1c40f; box-shadow: 0 0 15px rgba(241, 196, 15, 0.3);">
-            <img class="card-img" src="https://images.unsplash.com/photo-1605901309584-818e25960b8f?q=80&w=600&auto=format&fit=crop" alt="Sponsored Game">
+            <img class="card-img" src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg" alt="Black Myth: Wukong">
             <div class="card-content">
-                <span class="tag" style="background: #f1c40f; color: #000;">🔥 SPONSORED DEAL</span>
-                <h3 class="title">Mystery AAA Game - Up to 90% OFF!</h3>
+                <span class="tag" style="background: #f1c40f; color: #000;">🔥 HOT DEAL</span>
+                <h3 class="title">Black Myth: Wukong - Epic Discount!</h3>
                 <a href="#" target="_blank" class="btn" style="background: #f1c40f; color: #000;">Get it now</a>
             </div>
         </div>
