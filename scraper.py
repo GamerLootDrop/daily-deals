@@ -10,7 +10,6 @@ def scrape_deals():
         if response.status_code == 200:
             games = response.json()
             deals = []
-            # 抓取前 12 个最新的福利
             for game in games[:12]:
                 deals.append({
                     "title": game.get("title"),
@@ -23,7 +22,7 @@ def scrape_deals():
                 json.dump(deals, f, ensure_ascii=False, indent=4)
             
             generate_html(deals)
-            print("✅ 豪华版网页更新成功！")
+            print("✅ 网页更新成功！")
         else:
             print(f"❌ 接口请求失败，状态码: {response.status_code}")
     except Exception as e:
@@ -32,7 +31,6 @@ def scrape_deals():
 def generate_html(deals):
     cards = ""
     for item in deals:
-        # 这里使用了完整的 CSS 类，而不是简陋的行内样式
         cards += f'''
         <div class="card">
             <img class="card-img" src="{item['image']}" alt="Game Cover">
@@ -51,7 +49,6 @@ def generate_html(deals):
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GamerLootDrop - Global Free Games</title>
         <style>
-            /* 核心变量定义 */
             :root {{
                 --bg-color: #121212;
                 --card-bg: #1e1e1e;
@@ -59,7 +56,6 @@ def generate_html(deals):
                 --text: #ffffff;
                 --text-muted: #aaaaaa;
             }}
-            /* 全局重置 */
             body {{
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 background-color: var(--bg-color);
@@ -67,12 +63,10 @@ def generate_html(deals):
                 padding: 30px 20px;
                 margin: 0;
             }}
-            /* 头部样式 */
             .header {{ text-align: center; margin-bottom: 50px; }}
             .header h1 {{ font-size: 2.8rem; margin-bottom: 10px; color: var(--text); letter-spacing: 1px; }}
             .header h1 span {{ color: var(--primary); }}
             .header p {{ color: var(--text-muted); font-size: 1.1rem; }}
-            /* 网格布局：完美解决错位问题 */
             .grid {{
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -80,7 +74,6 @@ def generate_html(deals):
                 max-width: 1250px;
                 margin: 0 auto;
             }}
-            /* 卡片样式：带悬停动画 */
             .card {{
                 background: var(--card-bg);
                 border-radius: 12px;
@@ -90,7 +83,6 @@ def generate_html(deals):
                 flex-direction: column;
                 transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             }}
-            /* 鼠标放上去的动态效果 */
             .card:hover {{
                 transform: translateY(-8px);
                 box-shadow: 0 15px 30px rgba(0,0,0,0.5);
@@ -106,7 +98,7 @@ def generate_html(deals):
                 padding: 20px;
                 display: flex;
                 flex-direction: column;
-                flex-grow: 1; /* 自动撑开填满高度 */
+                flex-grow: 1;
             }}
             .tag {{
                 align-self: flex-start;
@@ -120,7 +112,6 @@ def generate_html(deals):
                 margin-bottom: 15px;
                 color: #ddd;
             }}
-            /* 标题限制最多显示两行，解决长短不一导致错位 */
             .title {{
                 font-size: 1.1rem;
                 margin: 0 0 20px 0;
@@ -131,7 +122,7 @@ def generate_html(deals):
                 -webkit-box-orient: vertical;
                 overflow: hidden;
             }}
-            /* 按钮样式 */
+            /* 重点修复：增强按钮动画 */
             .btn {{
                 display: block;
                 text-align: center;
@@ -141,10 +132,17 @@ def generate_html(deals):
                 padding: 12px;
                 border-radius: 8px;
                 font-weight: bold;
-                transition: background 0.3s ease, transform 0.1s ease;
+                transition: all 0.2s ease; /* 开启所有属性的平滑动画 */
             }}
-            .btn:hover {{ background: #2ecc71; }}
-            .btn:active {{ transform: scale(0.97); }}
+            .btn:hover {{ 
+                background: #2ecc71; 
+                transform: scale(1.05); /* 鼠标放上去时：按钮微微放大 5% */
+                box-shadow: 0 4px 12px rgba(46, 204, 113, 0.5); /* 鼠标放上去时：底部出现绿色发光阴影 */
+            }}
+            .btn:active {{ 
+                transform: scale(0.95); /* 鼠标点击时：按钮往下陷 */
+                box-shadow: none;
+            }}
         </style>
     </head>
     <body>
