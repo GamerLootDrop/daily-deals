@@ -4,116 +4,37 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GamerLootDrop - Global Free Games</title>
+        <title>GamerLootDrop - Daily Free Games & Giveaways</title>
         <style>
-            :root {
-                --bg-color: #121212;
-                --card-bg: #1e1e1e;
-                --primary: #27ae60;
-                --text: #ffffff;
-                --text-muted: #aaaaaa;
-            }
-            body {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background-color: var(--bg-color);
-                color: var(--text);
-                padding: 30px 20px;
-                margin: 0;
-            }
-            .header { text-align: center; margin-bottom: 50px; }
-            .header h1 { font-size: 2.8rem; margin-bottom: 10px; color: var(--text); letter-spacing: 1px; }
-            .header h1 span { color: var(--primary); }
-            .header p { color: var(--text-muted); font-size: 1.1rem; }
-            .grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-                gap: 25px;
-                max-width: 1250px;
-                margin: 0 auto;
-            }
-            .card {
-                background: var(--card-bg);
-                border-radius: 12px;
-                overflow: hidden;
-                border: 1px solid #333;
-                display: flex;
-                flex-direction: column;
-                transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            }
-            .card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-                border-color: var(--primary);
-            }
-            .card-img {
-                width: 100%;
-                height: 160px;
-                object-fit: cover;
-                border-bottom: 1px solid #333;
-            }
-            .card-content {
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                flex-grow: 1;
-            }
-            .tag {
-                align-self: flex-start;
-                font-size: 0.75rem;
-                font-weight: bold;
-                background: #333;
-                padding: 5px 10px;
-                border-radius: 6px;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-                margin-bottom: 15px;
-                color: #ddd;
-            }
-            .title {
-                font-size: 1.1rem;
-                margin: 0 0 20px 0;
-                line-height: 1.4;
-                flex-grow: 1;
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-            }
-            /* 重点修复：增强按钮动画 */
-            .btn {
-                display: block;
-                text-align: center;
-                background: var(--primary);
-                color: white;
-                text-decoration: none;
-                padding: 12px;
-                border-radius: 8px;
-                font-weight: bold;
-                transition: all 0.2s ease; /* 开启所有属性的平滑动画 */
-            }
-            .btn:hover { 
-                background: #2ecc71; 
-                transform: scale(1.05); /* 鼠标放上去时：按钮微微放大 5% */
-                box-shadow: 0 4px 12px rgba(46, 204, 113, 0.5); /* 鼠标放上去时：底部出现绿色发光阴影 */
-            }
-            .btn:active { 
-                transform: scale(0.95); /* 鼠标点击时：按钮往下陷 */
-                box-shadow: none;
-            }
+            :root { --bg: #121212; --card: #1e1e1e; --primary: #27ae60; --text: #ffffff; }
+            body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; }
+            .header { text-align: center; padding: 40px 0; }
+            .header h1 { font-size: 2.5rem; color: var(--primary); }
+            .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+            .card { background: var(--card); border-radius: 12px; overflow: hidden; transition: 0.3s; border: 1px solid #333; }
+            .card:hover { transform: translateY(-5px); border-color: var(--primary); }
+            .card-img { width: 100%; height: 160px; object-fit: cover; }
+            .card-content { padding: 15px; }
+            .tag { font-size: 0.7rem; background: #333; padding: 4px 8px; border-radius: 4px; color: #aaa; }
+            .title { font-size: 1rem; margin: 10px 0; height: 2.8em; overflow: hidden; }
+            .btn { display: block; text-align: center; background: var(--primary); color: white; text-decoration: none; padding: 10px; border-radius: 6px; font-weight: bold; transition: 0.2s; }
+            .btn:hover { background: #2ecc71; transform: scale(1.02); }
+            footer { text-align: center; margin-top: 50px; padding: 20px; color: #666; font-size: 0.9rem; border-top: 1px solid #333; }
+            footer a { color: #888; text-decoration: none; margin: 0 10px; }
+            footer a:hover { color: var(--primary); }
         </style>
     </head>
     <body>
         <div class="header">
-            <h1>🎮 Gamer<span>Loot</span>Drop</h1>
-            <p>Global Free Games Radar • Auto-updated Daily</p>
+            <h1>🎮 GamerLootDrop</h1>
+            <p>Your Daily Source for Global Free Games</p>
         </div>
         <div class="grid">
-            
         <div class="card">
             <img class="card-img" src="https://www.gamerpower.com/offers/1/69ea52173784a.jpg" alt="Game Cover">
             <div class="card-content">
                 <span class="tag">PC, Steam</span>
-                <h3 class="title" title="8AM (Steam) Giveaway">8AM (Steam) Giveaway</h3>
+                <h3 class="title">8AM (Steam) Giveaway</h3>
                 <a href="https://www.gamerpower.com/8am-steam-giveaway" target="_blank" class="btn">Claim Now</a>
             </div>
         </div>
@@ -121,7 +42,7 @@
             <img class="card-img" src="https://www.gamerpower.com/offers/1/69ea385817824.jpg" alt="Game Cover">
             <div class="card-content">
                 <span class="tag">Android, iOS</span>
-                <h3 class="title" title="911 Operator (Mobile) Giveaway">911 Operator (Mobile) Giveaway</h3>
+                <h3 class="title">911 Operator (Mobile) Giveaway</h3>
                 <a href="https://www.gamerpower.com/911-operator-mobile-giveaway" target="_blank" class="btn">Claim Now</a>
             </div>
         </div>
@@ -129,7 +50,7 @@
             <img class="card-img" src="https://www.gamerpower.com/offers/1/69ea3480810e8.jpg" alt="Game Cover">
             <div class="card-content">
                 <span class="tag">PC, Epic Games Store</span>
-                <h3 class="title" title="DOOMBLADE (Epic Games) Giveaway">DOOMBLADE (Epic Games) Giveaway</h3>
+                <h3 class="title">DOOMBLADE (Epic Games) Giveaway</h3>
                 <a href="https://www.gamerpower.com/doomblade-epic-games-giveaway" target="_blank" class="btn">Claim Now</a>
             </div>
         </div>
@@ -137,7 +58,7 @@
             <img class="card-img" src="https://www.gamerpower.com/offers/1/69ea2977d040a.jpg" alt="Game Cover">
             <div class="card-content">
                 <span class="tag">PC, Steam</span>
-                <h3 class="title" title="Nocturnal (Steam) Giveaway">Nocturnal (Steam) Giveaway</h3>
+                <h3 class="title">Nocturnal (Steam) Giveaway</h3>
                 <a href="https://www.gamerpower.com/nocturnal-steam-giveaway" target="_blank" class="btn">Claim Now</a>
             </div>
         </div>
@@ -145,7 +66,7 @@
             <img class="card-img" src="https://www.gamerpower.com/offers/1/68dbed23943f2.jpg" alt="Game Cover">
             <div class="card-content">
                 <span class="tag">PC</span>
-                <h3 class="title" title="Ashanti Protocol-Unmanned peacekeepers amidst conflict (Stove) Giveaway">Ashanti Protocol-Unmanned peacekeepers amidst conflict (Stove) Giveaway</h3>
+                <h3 class="title">Ashanti Protocol-Unmanned peacekeepers amidst conflict (Stove) Giveaway</h3>
                 <a href="https://www.gamerpower.com/ashanti-protocol-unmanned-peacekeepers-amidst-conflict-pc-giveaway" target="_blank" class="btn">Claim Now</a>
             </div>
         </div>
@@ -153,7 +74,7 @@
             <img class="card-img" src="https://www.gamerpower.com/offers/1/69e9453dabd9d.jpg" alt="Game Cover">
             <div class="card-content">
                 <span class="tag">PC, Steam</span>
-                <h3 class="title" title="Aeonic (Steam) Giveaway">Aeonic (Steam) Giveaway</h3>
+                <h3 class="title">Aeonic (Steam) Giveaway</h3>
                 <a href="https://www.gamerpower.com/aeonic-steam-giveaway" target="_blank" class="btn">Claim Now</a>
             </div>
         </div>
@@ -161,7 +82,7 @@
             <img class="card-img" src="https://www.gamerpower.com/offers/1/69e9062ec928b.jpg" alt="Game Cover">
             <div class="card-content">
                 <span class="tag">PC, Itch.io, DRM-Free</span>
-                <h3 class="title" title="Flowerdrops (Itchio) Giveaway">Flowerdrops (Itchio) Giveaway</h3>
+                <h3 class="title">Flowerdrops (Itchio) Giveaway</h3>
                 <a href="https://www.gamerpower.com/flowerdrops-itchio-giveaway" target="_blank" class="btn">Claim Now</a>
             </div>
         </div>
@@ -169,7 +90,7 @@
             <img class="card-img" src="https://www.gamerpower.com/offers/1/69e902c35651a.jpg" alt="Game Cover">
             <div class="card-content">
                 <span class="tag">PC, Steam</span>
-                <h3 class="title" title="SurrounDead Poly Construction (Steam) Giveaway">SurrounDead Poly Construction (Steam) Giveaway</h3>
+                <h3 class="title">SurrounDead Poly Construction (Steam) Giveaway</h3>
                 <a href="https://www.gamerpower.com/surroundead-poly-construction-steam-giveaway" target="_blank" class="btn">Claim Now</a>
             </div>
         </div>
@@ -177,7 +98,7 @@
             <img class="card-img" src="https://www.gamerpower.com/offers/1/69e778037bd0b.jpg" alt="Game Cover">
             <div class="card-content">
                 <span class="tag">PC, GOG, DRM-Free</span>
-                <h3 class="title" title="The Whispering Valley (GOG) Giveaway">The Whispering Valley (GOG) Giveaway</h3>
+                <h3 class="title">The Whispering Valley (GOG) Giveaway</h3>
                 <a href="https://www.gamerpower.com/the-whispering-valley-gog-giveaway" target="_blank" class="btn">Claim Now</a>
             </div>
         </div>
@@ -185,7 +106,7 @@
             <img class="card-img" src="https://www.gamerpower.com/offers/1/69e769fac1a28.jpg" alt="Game Cover">
             <div class="card-content">
                 <span class="tag">PC, Itch.io, DRM-Free</span>
-                <h3 class="title" title="Emily_ (itchio) Giveaway">Emily_ (itchio) Giveaway</h3>
+                <h3 class="title">Emily_ (itchio) Giveaway</h3>
                 <a href="https://www.gamerpower.com/emily-itchio-giveaway" target="_blank" class="btn">Claim Now</a>
             </div>
         </div>
@@ -193,7 +114,7 @@
             <img class="card-img" src="https://www.gamerpower.com/offers/1/69e7686e9561b.jpg" alt="Game Cover">
             <div class="card-content">
                 <span class="tag">PC, Itch.io, DRM-Free</span>
-                <h3 class="title" title="The Lost Painter (itchio) Giveaway">The Lost Painter (itchio) Giveaway</h3>
+                <h3 class="title">The Lost Painter (itchio) Giveaway</h3>
                 <a href="https://www.gamerpower.com/the-lost-painter-itchio-giveaway" target="_blank" class="btn">Claim Now</a>
             </div>
         </div>
@@ -201,10 +122,159 @@
             <img class="card-img" src="https://www.gamerpower.com/offers/1/69e7677c90b06.jpg" alt="Game Cover">
             <div class="card-content">
                 <span class="tag">PC, Itch.io, DRM-Free</span>
-                <h3 class="title" title="The Saint (itchio) Giveaway">The Saint (itchio) Giveaway</h3>
+                <h3 class="title">The Saint (itchio) Giveaway</h3>
                 <a href="https://www.gamerpower.com/the-saint-itchio-giveaway" target="_blank" class="btn">Claim Now</a>
             </div>
         </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/69e2571643f8d.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC, Playstation 5, Android, iOS</span>
+                <h3 class="title">Arknights: Endfield Gift Pack Key Giveaway</h3>
+                <a href="https://www.gamerpower.com/arknights-endfield-gift-pack-key-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
         </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/69e111ab4dc83.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC, Steam</span>
+                <h3 class="title">Cthulhu: The Cosmic Abyss - Sanity Skin Pack (Steam) Giveaway</h3>
+                <a href="https://www.gamerpower.com/cthulhu-the-cosmic-abyss-sanity-skin-pack-steam-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/69e110ed9597c.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC</span>
+                <h3 class="title">Super Animal Royale Bundle Key Giveaway</h3>
+                <a href="https://www.gamerpower.com/super-animal-royale-bundle-key-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/69e11021033ba.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC, Steam</span>
+                <h3 class="title">GRASS Playtest Steam Key Giveaway</h3>
+                <a href="https://www.gamerpower.com/grass-playtest-steam-key-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/69e10f2ba97f6.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One, Android, iOS</span>
+                <h3 class="title">Idle Champions Lae'zel Key Giveaway</h3>
+                <a href="https://www.gamerpower.com/idle-champions-lae-zel-key-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/69de855c94b1e.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC, Itch.io, DRM-Free</span>
+                <h3 class="title">Lihiman (itchio) Giveaway</h3>
+                <a href="https://www.gamerpower.com/lihiman-itchio-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/68a5f15b0319d.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC, DRM-Free</span>
+                <h3 class="title">Game club "Waka-Waka" (IndieGala) Giveaway</h3>
+                <a href="https://www.gamerpower.com/game-club-waka-waka-pc-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/69dce2cb554f4.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC, Steam, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One</span>
+                <h3 class="title">FATAL FRAME / PROJECT ZERO: Mask of the Lunar Eclipse DLC Giveaway</h3>
+                <a href="https://www.gamerpower.com/fatal-frame-project-zero-mask-of-the-lunar-eclipse-dlc-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/69d44cc9b09a2.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC, Steam</span>
+                <h3 class="title">Deadswitch Combat: Soldier Bundle (Steam) Giveaway</h3>
+                <a href="https://www.gamerpower.com/deadswitch-combat-soldier-bundle-steam-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/69cc1259d6b5e.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC</span>
+                <h3 class="title">Hero Wars: Polaris Gift Key Giveaway</h3>
+                <a href="https://www.gamerpower.com/hero-wars-polaris-gift-key-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/69ca788f5d0d4.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC, Itch.io, DRM-Free</span>
+                <h3 class="title">Sleep Demon (Itchio) Giveaway</h3>
+                <a href="https://www.gamerpower.com/sleep-demon-itchio-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/69c7ed7687ccc.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC</span>
+                <h3 class="title">Blood And Zombies (IndieGala) Giveaway</h3>
+                <a href="https://www.gamerpower.com/blood-and-zombies-pc-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/69a718ba231fc.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC</span>
+                <h3 class="title">Star Trek Online: Corruption Gift Pack Key Giveaway</h3>
+                <a href="https://www.gamerpower.com/star-trek-online-corruption-gift-pack-key-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/699f2c7ebf7f6.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC</span>
+                <h3 class="title">Blade and Soul NEO Anniversary Weapon Skin Key Giveaway</h3>
+                <a href="https://www.gamerpower.com/blade-and-soul-neo-anniversary-weapon-skin-key-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/67c76007697b3.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC, Itch.io, DRM-Free</span>
+                <h3 class="title">Madness Inside (itch.io) Giveaway</h3>
+                <a href="https://www.gamerpower.com/madness-inside-itch-io-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/6930a11f989ac.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC, Itch.io, DRM-Free</span>
+                <h3 class="title">Rose and Cross (Itch.io) Giveaway</h3>
+                <a href="https://www.gamerpower.com/rose-and-cross-itch-io-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/698b912713a1b.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC, Steam</span>
+                <h3 class="title">Deadswitch Combat: Weapons Skins Steam Key Giveaway</h3>
+                <a href="https://www.gamerpower.com/deadswitch-combat-weapons-skins-steam-key-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="https://www.gamerpower.com/offers/1/698b92396a0fc.jpg" alt="Game Cover">
+            <div class="card-content">
+                <span class="tag">PC</span>
+                <h3 class="title">KARDS Special Bundle Key Giveaway</h3>
+                <a href="https://www.gamerpower.com/kards-special-bundle-key-giveaway" target="_blank" class="btn">Claim Now</a>
+            </div>
+        </div></div>
+        <footer>
+            <p>&copy; 2024 GamerLootDrop. All rights reserved.</p>
+            <a href="about.html">About Us</a> | 
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Service</a>
+        </footer>
     </body>
     </html>
