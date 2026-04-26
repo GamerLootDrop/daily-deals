@@ -2,12 +2,15 @@ name: Daily Deals Update
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 每天北京时间早上 8 点运行
-  workflow_dispatch: # 允许你手动点按钮更新
+    # 设定在北京时间每天早上 9:00 运行 (UTC 1:00)
+    - cron: '0 1 * * *'
+  workflow_dispatch: # 允许你随时手动点击按钮更新
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # 赋予机器人写入权限，防止推送失败
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -20,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4
+          pip install requests
 
       - name: Run scraper
         run: python scraper.py
@@ -29,6 +32,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add index.html deals.json
-          git commit -m "Auto-update deals" || exit 0
+          # 自动添加所有变动文件（包括 deals.json）
+          git add .
+          git commit -m "Auto-update deals and content" || exit 0
           git push
