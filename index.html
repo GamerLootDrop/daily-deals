@@ -21,14 +21,12 @@
         .header { text-align: center; padding: 60px 0 30px; }
         .header h1 { font-size: 3rem; color: var(--primary); margin-bottom: 10px; text-shadow: 0 0 20px rgba(0,255,135,0.3); }
         
-        /* 分类筛选按钮样式 */
         .filter-container { text-align: center; margin-bottom: 30px; }
         .filter-btn { background: #2f3542; border: none; color: white; padding: 8px 18px; margin: 5px; border-radius: 20px; cursor: pointer; transition: 0.3s; font-weight: 600; }
         .filter-btn.active, .filter-btn:hover { background: var(--primary); color: #000; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
         
-        /* 推广位特效 */
         .card.featured { border: 2px solid var(--hot); box-shadow: 0 0 20px rgba(255, 71, 87, 0.2); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { box-shadow: 0 0 10px rgba(255,71,87,0.2); } 50% { box-shadow: 0 0 25px rgba(255,71,87,0.5); } 100% { box-shadow: 0 0 10px rgba(255,71,87,0.2); } }
 
@@ -38,7 +36,7 @@
         .card-content { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
         .tag { align-self: flex-start; font-size: 0.75rem; background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 8px; color: var(--primary); margin-bottom: 12px; font-weight: bold; text-transform: uppercase; }
         
-        .title { font-size: 1.1rem; margin: 0 0 20px 0; font-weight: 700; height: 2.8em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .title { font-size: 1.1rem; margin: 0 0 15px 0; font-weight: 700; height: 2.8em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         
         .btn { margin-top: auto; display: block; text-align: center; background: var(--primary); color: #000; text-decoration: none; padding: 12px; border-radius: 10px; font-weight: 800; transition: 0.3s; }
         .btn:hover { filter: brightness(1.2); letter-spacing: 1px; }
@@ -71,7 +69,7 @@
                 <a href="https://www.g2a.com/n/forza-6-deal" target="_blank" class="btn" style="background: var(--hot); color: #fff;">Get Deal Now</a>
             </div>
         </div>
-        </div>
+    </div>
 
     <footer>
         <div class="footer-links">
@@ -87,6 +85,7 @@
 
         async function loadGames() {
             try {
+                // 读取机器人抓取的最新数据
                 const response = await fetch('deals.json?v=' + new Date().getTime());
                 allGamesData = await response.json();
                 renderGames(allGamesData);
@@ -97,21 +96,25 @@
 
         function renderGames(games) {
             const grid = document.getElementById('game-grid');
-            // 保留第一个推广位
+            // 保留第一个推广位，清空其他的重新渲染
             const featured = grid.firstElementChild.outerHTML;
             grid.innerHTML = featured;
 
             games.forEach(game => {
                 const card = document.createElement('div');
                 card.className = 'card';
-                // 简单的平台识别逻辑用于筛选
                 card.setAttribute('data-platform', game.platform.toLowerCase());
                 
+                // 这里就是我说的“新逻辑”，加入了 worth(价值) 和 end_date(截止日期) 的显示
                 card.innerHTML = `
                     <img class="card-img" src="${game.image}" alt="${game.title}" loading="lazy">
                     <div class="card-content">
-                        <span class="tag">${game.platform}</span>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                            <span class="tag">${game.platform}</span>
+                            <span style="color:var(--primary); font-size:0.8rem; font-weight:bold;">${game.worth}</span>
+                        </div>
                         <h3 class="title" title="${game.title}">${game.title}</h3>
+                        <p style="font-size:0.75rem; color:#888; margin-bottom:10px;">⏳ Ends: ${game.end_date}</p>
                         <a href="${game.link}" target="_blank" class="btn">Claim Now</a>
                     </div>
                 `;
@@ -120,7 +123,6 @@
         }
 
         function filterGames(platform) {
-            // 更新按钮状态
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
 
@@ -129,12 +131,11 @@
                 if (platform === 'all') {
                     card.style.display = 'flex';
                 } else {
-                    // 检查卡片平台上是否包含关键词
-                    const cardPlatform = card.getAttribute('data-platform');
+                    const cardPlatform = card.getAttribute('data-platform') || "";
                     card.style.display = cardPlatform.includes(platform) ? 'flex' : 'none';
                 }
             });
-            // 确保推广位始终显示
+            // 推广位始终显示
             document.querySelector('.card.featured').style.display = 'flex';
         }
 
