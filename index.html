@@ -1,145 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX69EH1WFL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WX69EH1WFL');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GamerLootDrop | Latest Free Steam Keys & PC Giveaways Daily</title>
-    <meta name="description" content="Get the latest free Steam keys, Epic Games giveaways, and mobile game loot. Updated every 24 hours.">
+    <title>Daily Free Games & Deals Radar - Free Steam Keys, Epic Games Giveaway</title>
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Get daily free Steam keys, Epic Games giveaway codes, and limited-time game deals. Claim your free PC games now at GamerLootDrop!">
+    <meta name="keywords" content="Free Steam Keys, Epic Games Giveaway, Free PC Games, Game Deals, Steam Giveaway, Epic Free Games, Limited Time Games, GamerLootDrop">
+    <meta name="author" content="GamerLootDrop">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Daily Free Games & Deals - Free Steam Keys, Epic Giveaway">
+    <meta property="og:description" content="Claim free PC games daily! Steam keys, Epic Games giveaways, and exclusive deals.">
+    <meta property="og:url" content="https://gamerlootdrop.github.io/daily-deals/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        :root { --bg: #0f0f0f; --card: #1a1a1a; --primary: #00ff87; --hot: #ff4757; --text: #f1f2f6; }
-        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; line-height: 1.6; }
-        
-        .header { text-align: center; padding: 60px 0 30px; }
-        .header h1 { font-size: 3rem; color: var(--primary); margin-bottom: 10px; text-shadow: 0 0 20px rgba(0,255,135,0.3); }
-        
-        .filter-container { text-align: center; margin-bottom: 30px; }
-        .filter-btn { background: #2f3542; border: none; color: white; padding: 8px 18px; margin: 5px; border-radius: 20px; cursor: pointer; transition: 0.3s; font-weight: 600; }
-        .filter-btn.active, .filter-btn:hover { background: var(--primary); color: #000; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        
-        .card.featured { border: 2px solid var(--hot); box-shadow: 0 0 20px rgba(255, 71, 87, 0.2); animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { box-shadow: 0 0 10px rgba(255,71,87,0.2); } 50% { box-shadow: 0 0 25px rgba(255,71,87,0.5); } 100% { box-shadow: 0 0 10px rgba(255,71,87,0.2); } }
-
-        .card { background: var(--card); border-radius: 16px; overflow: hidden; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid #2f3542; display: flex; flex-direction: column; height: 100%; position: relative; }
-        .card:hover { transform: translateY(-10px); border-color: var(--primary); }
-        .card-img { width: 100%; height: 170px; object-fit: cover; }
-        .card-content { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-        .tag { align-self: flex-start; font-size: 0.75rem; background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 8px; color: var(--primary); margin-bottom: 12px; font-weight: bold; text-transform: uppercase; }
-        
-        .title { font-size: 1.1rem; margin: 0 0 15px 0; font-weight: 700; height: 2.8em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        
-        .btn { margin-top: auto; display: block; text-align: center; background: var(--primary); color: #000; text-decoration: none; padding: 12px; border-radius: 10px; font-weight: 800; transition: 0.3s; }
-        .btn:hover { filter: brightness(1.2); letter-spacing: 1px; }
-        
-        footer { text-align: center; margin-top: 80px; padding: 40px; color: #57606f; border-top: 1px solid #2f3542; }
-        .footer-links a { color: #a4b0be; text-decoration: none; margin: 0 15px; font-size: 0.9rem; }
-        .footer-links a:hover { color: var(--primary); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0d0d0d;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #00ff88;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        }
+        #deal-list {
+            width: 100%;
+            max-width: 1400px;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            padding: 10px;
+        }
+        .deal-card {
+            background: linear-gradient(145deg, #1a1a1a 0%, #222222 100%);
+            border: 1px solid #333;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        .deal-card:hover {
+            transform: translateY(-8px);
+            border-color: #00ff88;
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.15),
+                        0 0 30px rgba(0, 255, 136, 0.1);
+        }
+        .deal-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            background: #0d0d0d;
+        }
+        .deal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .deal-card:hover .deal-image img {
+            transform: scale(1.05);
+        }
+        .deal-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .deal-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .deal-desc {
+            color: #999;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+        .deal-price-row {
+            margin-bottom: 16px;
+        }
+        .deal-price {
+            color: #00ff88;
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+        .deal-btn {
+            display: block;
+            width: 100%;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+            color: #0d0d0d;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .deal-btn:hover {
+            background: linear-gradient(135deg, #00ffaa 0%, #00ee7a 100%);
+            box-shadow: 0 8px 20px rgba(0, 255, 136, 0.4);
+            transform: translateY(-2px);
+        }
+        .empty-state {
+            color: #666;
+            text-align: center;
+            padding: 60px 20px;
+            font-style: italic;
+            grid-column: 1 / -1;
+        }
+        @media (max-width: 768px) {
+            #deal-list {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🎮 GamerLootDrop</h1>
-        <p>Your Automatic Gateway to Free Games & Deals</p>
-    </div>
-
-    <div class="filter-container">
-        <button class="filter-btn active" onclick="filterGames('all')">All Games</button>
-        <button class="filter-btn" onclick="filterGames('steam')">Steam</button>
-        <button class="filter-btn" onclick="filterGames('epic')">Epic Games</button>
-        <button class="filter-btn" onclick="filterGames('pc')">PC Store</button>
-        <button class="filter-btn" onclick="filterGames('mobile')">Mobile</button>
-    </div>
-    
-    <div class="grid" id="game-grid">
-        <div class="card featured" data-platform="pc">
-            <img class="card-img" src="https://media.rawg.io/media/games/082/082365507ff04d456c700157072d35db.jpg" alt="Forza Horizon 6">
-            <div class="card-content">
-                <span class="tag" style="background: var(--hot); color: #fff;">🔥 TOP PRE-ORDER</span>
-                <h3 class="title">Forza Horizon 6 - Epic Pre-order Deal!</h3>
-                <a href="https://www.g2a.com/n/forza-6-deal" target="_blank" class="btn" style="background: var(--hot); color: #fff;">Get Deal Now</a>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-links">
-            <a href="about.html">About</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-        </div>
-        <p style="margin-top:20px;">&copy; 2024 GamerLootDrop. Updated daily by AI.</p>
-    </footer>
-
-    <script>
-        let allGamesData = [];
-
-        async function loadGames() {
-            try {
-                // 读取机器人抓取的最新数据
-                const response = await fetch('deals.json?v=' + new Date().getTime());
-                allGamesData = await response.json();
-                renderGames(allGamesData);
-            } catch (err) {
-                console.log("Waiting for robot update...");
-            }
-        }
-
-        function renderGames(games) {
-            const grid = document.getElementById('game-grid');
-            // 保留第一个推广位，清空其他的重新渲染
-            const featured = grid.firstElementChild.outerHTML;
-            grid.innerHTML = featured;
-
-            games.forEach(game => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.setAttribute('data-platform', game.platform.toLowerCase());
-                
-                // 这里就是我说的“新逻辑”，加入了 worth(价值) 和 end_date(截止日期) 的显示
-                card.innerHTML = `
-                    <img class="card-img" src="${game.image}" alt="${game.title}" loading="lazy">
-                    <div class="card-content">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-                            <span class="tag">${game.platform}</span>
-                            <span style="color:var(--primary); font-size:0.8rem; font-weight:bold;">${game.worth}</span>
-                        </div>
-                        <h3 class="title" title="${game.title}">${game.title}</h3>
-                        <p style="font-size:0.75rem; color:#888; margin-bottom:10px;">⏳ Ends: ${game.end_date}</p>
-                        <a href="${game.link}" target="_blank" class="btn">Claim Now</a>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        function filterGames(platform) {
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                if (platform === 'all') {
-                    card.style.display = 'flex';
-                } else {
-                    const cardPlatform = card.getAttribute('data-platform') || "";
-                    card.style.display = cardPlatform.includes(platform) ? 'flex' : 'none';
-                }
-            });
-            // 推广位始终显示
-            document.querySelector('.card.featured').style.display = 'flex';
-        }
-
-        window.onload = loadGames;
-    </script>
+    <h1>🎯 Daily Free Games & Deals Radar</h1>
+    <ul id="deal-list">
+        <li class="empty-state">Scanning for latest deals...</li>
+    </ul>
 </body>
 </html>
