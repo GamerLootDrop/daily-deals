@@ -1,102 +1,182 @@
 [
-  {
-    "title": "Carlos the Taco (IndieGala) Giveaway",
-    "description": "Become the Taco! Finally, a free game made for taco fans! Download Carlos the Taco for free on IndieGala. Carlos the Taco is a 2D platformer set in Mexico where you play as a taco!",
-    "worth": "$2.99",
-    "worth_num": 2.99,
-    "open_giveaway": "https://www.gamerpower.com/open/carlos-the-taco-pc-giveaway",
-    "image": "https://www.gamerpower.com/offers/1b/68b1ae1e5c9ce.jpg",
-    "end_date": "Limited Time",
-    "type": "Game"
-  },
-  {
-    "title": "8AM (Steam) Giveaway",
-    "description": "Score 8AM for free via Steam! \"8AM\" is a 3d first-person suspense game where you find yourself trapped in a room, watching a family through cameras.",
-    "worth": "$3.99",
-    "worth_num": 3.99,
-    "open_giveaway": "https://www.gamerpower.com/open/8am-steam-giveaway",
-    "image": "https://www.gamerpower.com/offers/1b/69ea52173784a.jpg",
-    "end_date": "2026-04-27 23:59:00",
-    "type": "Game"
-  },
-  {
-    "title": "911 Operator (Mobile) Giveaway",
-    "description": "911 Operator is free this week on the Epic Games Store App for iPhone, iPad, and Android.\r\n\r\nNote: May not be available in all regions",
-    "worth": "$4.99",
-    "worth_num": 4.99,
-    "open_giveaway": "https://www.gamerpower.com/open/911-operator-mobile-giveaway",
-    "image": "https://www.gamerpower.com/offers/1b/69ea385817824.jpg",
-    "end_date": "2026-04-30 23:59:00",
-    "type": "Game"
-  },
-  {
-    "title": "DOOMBLADE (Epic Games) Giveaway",
-    "description": "Are you looking for a Metroidvania? Grab DOOMBLADE for free on Epic Games Store! DOOMBLADE is a 2D Action Metroidvania with a fast-paced movement-combat system.",
-    "worth": "$15.99",
-    "worth_num": 15.99,
-    "open_giveaway": "https://www.gamerpower.com/open/doomblade-epic-games-giveaway",
-    "image": "https://www.gamerpower.com/offers/1b/69ea3480810e8.jpg",
-    "end_date": "2026-04-30 23:59:00",
-    "type": "Game"
-  },
-  {
-    "title": "Nocturnal (Steam) Giveaway",
-    "description": "Time to wield some flames today! Grab Nocturnal for free on Steam until April 36! Nocturnal is a cool 2D action-platformer featuring fire-wielding mechanics. Don´t miss it!",
-    "worth": "$16.99",
-    "worth_num": 16.99,
-    "open_giveaway": "https://www.gamerpower.com/open/nocturnal-steam-giveaway",
-    "image": "https://www.gamerpower.com/offers/1b/69ea2977d040a.jpg",
-    "end_date": "2026-04-26 23:59:00",
-    "type": "Game"
-  },
-  {
-    "title": "Ashanti Protocol-Unmanned peacekeepers amidst conflict (Stove) Giveaway",
-    "description": "Grab Ashanti Protocol-Unmanned peacekeepers amidst conflict for free via STOVE Store!",
-    "worth": "$17.99",
-    "worth_num": 17.99,
-    "open_giveaway": "https://www.gamerpower.com/open/ashanti-protocol-unmanned-peacekeepers-amidst-conflict-pc-giveaway",
-    "image": "https://www.gamerpower.com/offers/1b/68dbed23943f2.jpg",
-    "end_date": "2026-05-08 23:59:00",
-    "type": "Game"
-  },
-  {
-    "title": "Aeonic (Steam) Giveaway",
-    "description": "Grab Aeonic for free via Steam until April 29!",
-    "worth": "$3.99",
-    "worth_num": 3.99,
-    "open_giveaway": "https://www.gamerpower.com/open/aeonic-steam-giveaway",
-    "image": "https://www.gamerpower.com/offers/1b/69e9453dabd9d.jpg",
-    "end_date": "2026-04-29 23:59:00",
-    "type": "Game"
-  },
-  {
-    "title": "The Whispering Valley (GOG) Giveaway",
-    "description": "Who wouldn’t want to explore a remote village? Grab The Whispering Valley for free via GOG, a 3D point-and-click game where you can explore a village and solve complex puzzles.",
-    "worth": "$11.99",
-    "worth_num": 11.99,
-    "open_giveaway": "https://www.gamerpower.com/open/the-whispering-valley-gog-giveaway",
-    "image": "https://www.gamerpower.com/offers/1b/69e778037bd0b.jpg",
-    "end_date": "2026-04-28 23:59:00",
-    "type": "Game"
-  },
-  {
-    "title": "Emily_ (itchio) Giveaway",
-    "description": "Curious about AI? Forget ChatGPT, Gemini, or even Claude, try talking to Emily instead. Emily_ is free on Itch.io for a limited time. Start a conversation… and see where it leads.",
-    "worth": "$3.99",
-    "worth_num": 3.99,
-    "open_giveaway": "https://www.gamerpower.com/open/emily-itchio-giveaway",
-    "image": "https://www.gamerpower.com/offers/1b/69e769fac1a28.jpg",
-    "end_date": "2026-04-27 23:59:00",
-    "type": "Game"
-  },
-  {
-    "title": "The Lost Painter (itchio) Giveaway",
-    "description": "Are you into liminal spaces? You can grab The Lost Painter for free on itch.io, it’s a single-player, first-person atmospheric walking sim.",
-    "worth": "$2.99",
-    "worth_num": 2.99,
-    "open_giveaway": "https://www.gamerpower.com/open/the-lost-painter-itchio-giveaway",
-    "image": "https://www.gamerpower.com/offers/1b/69e7686e9561b.jpg",
-    "end_date": "2026-05-01 23:59:00",
-    "type": "Game"
-  }
+    {
+        "title": "Carlos the Taco (IndieGala) Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/carlos-the-taco-pc-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/68b1ae1e5c9ce.jpg"
+    },
+    {
+        "title": "8AM (Steam) Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/8am-steam-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69ea52173784a.jpg"
+    },
+    {
+        "title": "911 Operator (Mobile) Giveaway",
+        "platform": "Android, iOS",
+        "link": "https://www.gamerpower.com/911-operator-mobile-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69ea385817824.jpg"
+    },
+    {
+        "title": "DOOMBLADE (Epic Games) Giveaway",
+        "platform": "PC, Epic Games Store",
+        "link": "https://www.gamerpower.com/doomblade-epic-games-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69ea3480810e8.jpg"
+    },
+    {
+        "title": "Nocturnal (Steam) Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/nocturnal-steam-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69ea2977d040a.jpg"
+    },
+    {
+        "title": "Ashanti Protocol-Unmanned peacekeepers amidst conflict (Stove) Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/ashanti-protocol-unmanned-peacekeepers-amidst-conflict-pc-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/68dbed23943f2.jpg"
+    },
+    {
+        "title": "Aeonic (Steam) Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/aeonic-steam-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e9453dabd9d.jpg"
+    },
+    {
+        "title": "The Whispering Valley (GOG) Giveaway",
+        "platform": "PC, GOG, DRM-Free",
+        "link": "https://www.gamerpower.com/the-whispering-valley-gog-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e778037bd0b.jpg"
+    },
+    {
+        "title": "Emily_ (itchio) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/emily-itchio-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e769fac1a28.jpg"
+    },
+    {
+        "title": "The Lost Painter (itchio) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/the-lost-painter-itchio-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e7686e9561b.jpg"
+    },
+    {
+        "title": "The Saint (itchio) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/the-saint-itchio-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e7677c90b06.jpg"
+    },
+    {
+        "title": "Arknights: Endfield Gift Pack Key Giveaway",
+        "platform": "PC, Playstation 5, Android, iOS",
+        "link": "https://www.gamerpower.com/arknights-endfield-gift-pack-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e2571643f8d.jpg"
+    },
+    {
+        "title": "Cthulhu: The Cosmic Abyss - Sanity Skin Pack (Steam) Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/cthulhu-the-cosmic-abyss-sanity-skin-pack-steam-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e111ab4dc83.jpg"
+    },
+    {
+        "title": "Super Animal Royale Bundle Key Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/super-animal-royale-bundle-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e110ed9597c.jpg"
+    },
+    {
+        "title": "GRASS Playtest Steam Key Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/grass-playtest-steam-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e11021033ba.jpg"
+    },
+    {
+        "title": "Idle Champions Lae'zel Key Giveaway",
+        "platform": "PC, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One, Android, iOS",
+        "link": "https://www.gamerpower.com/idle-champions-lae-zel-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e10f2ba97f6.jpg"
+    },
+    {
+        "title": "Game club \"Waka-Waka\" (IndieGala) Giveaway",
+        "platform": "PC, DRM-Free",
+        "link": "https://www.gamerpower.com/game-club-waka-waka-pc-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/68a5f15b0319d.jpg"
+    },
+    {
+        "title": "FATAL FRAME / PROJECT ZERO: Mask of the Lunar Eclipse DLC Giveaway",
+        "platform": "PC, Steam, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One",
+        "link": "https://www.gamerpower.com/fatal-frame-project-zero-mask-of-the-lunar-eclipse-dlc-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69dce2cb554f4.jpg"
+    },
+    {
+        "title": "Deadswitch Combat: Soldier Bundle (Steam) Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/deadswitch-combat-soldier-bundle-steam-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69d44cc9b09a2.jpg"
+    },
+    {
+        "title": "Hero Wars: Polaris Gift Key Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/hero-wars-polaris-gift-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69cc1259d6b5e.jpg"
+    },
+    {
+        "title": "Sleep Demon (Itchio) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/sleep-demon-itchio-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69ca788f5d0d4.jpg"
+    },
+    {
+        "title": "Blood And Zombies (IndieGala) Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/blood-and-zombies-pc-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69c7ed7687ccc.jpg"
+    },
+    {
+        "title": "Star Trek Online: Corruption Gift Pack Key Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/star-trek-online-corruption-gift-pack-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69a718ba231fc.jpg"
+    },
+    {
+        "title": "Blade and Soul NEO Anniversary Weapon Skin Key Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/blade-and-soul-neo-anniversary-weapon-skin-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/699f2c7ebf7f6.jpg"
+    },
+    {
+        "title": "Madness Inside (itch.io) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/madness-inside-itch-io-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/67c76007697b3.jpg"
+    },
+    {
+        "title": "Rose and Cross (Itch.io) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/rose-and-cross-itch-io-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/6930a11f989ac.jpg"
+    },
+    {
+        "title": "Deadswitch Combat: Weapons Skins Steam Key Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/deadswitch-combat-weapons-skins-steam-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/698b912713a1b.jpg"
+    },
+    {
+        "title": "KARDS Special Bundle Key Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/kards-special-bundle-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/698b92396a0fc.jpg"
+    },
+    {
+        "title": "Chop Shop Playtest (Steam) Key Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/chop-shop-playtest-steam-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/698625be7e6bf.jpg"
+    },
+    {
+        "title": "Endless Space 2 - Untold Tales DLC (Steam) Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/endless-space-2-untold-tales-dlc-steam-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69822af34149c.jpg"
+    }
 ]
