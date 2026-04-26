@@ -8,7 +8,6 @@
       gtag('js', new Date());
       gtag('config', 'G-WX69EH1WFL');
     </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamerLootDrop - Daily Free Games</title>
@@ -18,21 +17,15 @@
         .header { text-align: center; padding: 40px 0; }
         .header h1 { font-size: 2.5rem; color: var(--primary); }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        
         .card { background: var(--card); border-radius: 12px; overflow: hidden; transition: 0.3s; border: 1px solid #333; display: flex; flex-direction: column; height: 100%; }
         .card:hover { transform: translateY(-5px); border-color: var(--primary); }
         .card-img { width: 100%; height: 160px; object-fit: cover; }
         .card-content { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
         .tag { align-self: flex-start; font-size: 0.7rem; background: #333; padding: 4px 8px; border-radius: 4px; color: #aaa; margin-bottom: 10px; font-weight: bold; }
-        
         .title { font-size: 1rem; margin: 0 0 15px 0; line-height: 1.4; height: 2.8em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-        
         .btn { margin-top: auto; display: block; text-align: center; background: var(--primary); color: white; text-decoration: none; padding: 10px; border-radius: 6px; font-weight: bold; transition: 0.2s; }
         .btn:hover { filter: brightness(1.1); transform: scale(1.02); }
-        
         footer { text-align: center; margin-top: 50px; padding: 20px; color: #666; font-size: 0.9rem; border-top: 1px solid #333; }
-        footer a { color: #888; text-decoration: none; margin: 0 10px; }
-        footer a:hover { color: var(--primary); }
     </style>
 </head>
 <body>
@@ -40,7 +33,6 @@
         <h1>🎮 GamerLootDrop</h1>
         <p>Your Daily Source for Global Free Games</p>
     </div>
-    
     <div class="grid" id="games-container">
         <div class="card" style="border-color: #e74c3c; box-shadow: 0 0 15px rgba(231, 76, 60, 0.3);">
             <img class="card-img" src="https://media.rawg.io/media/games/082/082365507ff04d456c700157072d35db.jpg" alt="Forza Horizon 6">
@@ -51,48 +43,31 @@
             </div>
         </div>
     </div>
-
     <footer>
         <p>&copy; 2024 GamerLootDrop. All rights reserved.</p>
-        <a href="about.html">About Us</a> | 
-        <a href="privacy.html">Privacy Policy</a> | 
-        <a href="terms.html">Terms of Service</a>
     </footer>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const container = document.getElementById('games-container');
-            
-            // 💡 自动根据时间戳拉取最新 deals.json，防止缓存
             const fetchUrl = 'deals.json?v=' + new Date().getTime();
-            
             fetch(fetchUrl)
-                .then(response => {
-                    if (!response.ok) throw new Error("无法加载数据");
-                    return response.json();
-                })
+                .then(response => response.json())
                 .then(data => {
                     data.forEach(game => {
-                        // 🛠️ 针对你发来的 JSON 字段进行了精准适配
-                        const imgUrl = game.image || 'https://via.placeholder.com/280x160?text=No+Image';
-                        const gameTitle = game.title || 'Free Game';
-                        const platforms = game.platform || 'PC'; // 适配你 JSON 里的 platform
-                        const link = game.link || '#'; // 适配你 JSON 里的 link
-
                         const cardHTML = `
                             <div class="card">
-                                <img class="card-img" src="${imgUrl}" alt="${gameTitle}">
+                                <img class="card-img" src="${game.image || ''}" alt="${game.title}">
                                 <div class="card-content">
-                                    <span class="tag">${platforms}</span>
-                                    <h3 class="title" title="${gameTitle}">${gameTitle}</h3>
-                                    <a href="${link}" target="_blank" class="btn">Claim Now</a>
+                                    <span class="tag">${game.platform || 'PC'}</span>
+                                    <h3 class="title">${game.title}</h3>
+                                    <a href="${game.link}" target="_blank" class="btn">Claim Now</a>
                                 </div>
                             </div>
                         `;
                         container.innerHTML += cardHTML;
                     });
                 })
-                .catch(error => console.error("加载数据失败:", error));
+                .catch(err => console.error("Data error:", err));
         });
     </script>
 </body>
