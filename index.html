@@ -47,7 +47,7 @@
             <div class="card-content">
                 <span class="tag" style="background: #e74c3c; color: #fff;">🔥 TOP PRE-ORDER</span>
                 <h3 class="title">Forza Horizon 6 - Epic Pre-order Deal!</h3>
-                <a href="https://www.g2a.com/forza-horizon-6-xbox-series-x-s-pc-xbox-live-key-global-i10000515716024?reflink=reflink-329c8e3d21" target="_blank" class="btn" style="background: #e74c3c; color: #fff;">Get it now</a>
+                <a href="https://www.g2a.com/n/forza-6-deal" target="_blank" class="btn" style="background: #e74c3c; color: #fff;">Get it now</a>
             </div>
         </div>
     </div>
@@ -63,16 +63,16 @@
         document.addEventListener("DOMContentLoaded", function() {
             const container = document.getElementById('games-container');
             
-            // 去同目录下读取机器人抓好的最新数据
-            fetch('deals.json')
+            // 💡 加上了时间戳防缓存机制，确保每天都能看到最新的免费游戏
+            const fetchUrl = 'deals.json?v=' + new Date().getTime();
+            
+            fetch(fetchUrl)
                 .then(response => {
                     if (!response.ok) throw new Error("无法加载数据");
                     return response.json();
                 })
                 .then(data => {
-                    // 遍历数据，自动生成卡片
                     data.forEach(game => {
-                        // 适配不同的数据字段名
                         const imgUrl = game.thumbnail || game.image || 'https://via.placeholder.com/280x160?text=No+Image';
                         const gameTitle = game.title || 'Free Game';
                         const platforms = game.platforms || 'PC';
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                         `;
-                        container.innerHTML += cardHTML; // 把新卡片塞进网页
+                        container.innerHTML += cardHTML;
                     });
                 })
                 .catch(error => console.error("加载新游戏失败，请检查 deals.json 文件:", error));
