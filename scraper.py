@@ -1,5 +1,35 @@
 import requests
 import json
+import time
+
+# ==========================================
+# 🛠️ 配置区：只改这里，不碰装修
+# ==========================================
+# 你的 Discord Webhook 地址
+DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1497842345406632027/E4gnmBOA-9lywCzs481kdGyxnuJ8dwjQF4qFQi9U5ahNuiaUXItT05Jz4RDOZavL-XNv"
+# 你的网站链接
+WEBSITE_URL = "https://gamerlootdrop.github.io/daily-deals/"
+
+def send_discord_notification(deal):
+    """发送单条精美游戏通知到 Discord"""
+    if not DISCORD_WEBHOOK_URL:
+        return
+    
+    payload = {
+        "embeds": [{
+            "title": f"🔥 New Freebie: {deal['title']}",
+            "description": f"Platform: **{deal['platform']}**\nClaim this game for free right now!",
+            "url": WEBSITE_URL,
+            "color": 3066993, # 翠绿色，匹配你网页的 primary color
+            "image": {"url": deal['image']},
+            "footer": {"text": "Via GamerLootDrop - Your Daily Source"}
+        }]
+    }
+    try:
+        requests.post(DISCORD_WEBHOOK_URL, json=payload, timeout=10)
+        time.sleep(1) # 防止频率过快被 Discord 屏蔽
+    except:
+        pass
 
 def scrape_deals():
     print("🚀 正在扩容货架，并加载专属广告位...")
@@ -21,14 +51,18 @@ def scrape_deals():
                 json.dump(deals, f, ensure_ascii=False, indent=4)
             
             generate_html(deals)
-            print("✅ 网页更新成功！广告位已置顶，强迫症对齐已修复！")
+            print("✅ 网页更新成功！广告位已置顶！")
+
+            # --- Discord 推送逻辑：只推送前 3 个最给力的 ---
+            print("📢 正在同步到 Discord...")
+            for d in deals[:3]:
+                send_discord_notification(d)
+            
     except Exception as e:
         print(f"⚠️ 出错: {e}")
 
 def generate_html(deals):
-  # ==========================================
-    # 💰 这里就是你的“专属赚钱广告位”
-    # ==========================================
+    # 💰 这里就是你的“专属赚钱广告位”（原封不动保留）
     sponsored_card = '''
         <div class="card" style="border-color: #f1c40f; box-shadow: 0 0 15px rgba(241, 196, 15, 0.3);">
             <img class="card-img" src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg" alt="Black Myth: Wukong">
@@ -66,21 +100,14 @@ def generate_html(deals):
             .header {{ text-align: center; padding: 40px 0; }}
             .header h1 {{ font-size: 2.5rem; color: var(--primary); }}
             .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }}
-            
-            /* 这里做了强迫症对齐优化 */
             .card {{ background: var(--card); border-radius: 12px; overflow: hidden; transition: 0.3s; border: 1px solid #333; display: flex; flex-direction: column; height: 100%; }}
             .card:hover {{ transform: translateY(-5px); border-color: var(--primary); }}
             .card-img {{ width: 100%; height: 160px; object-fit: cover; }}
             .card-content {{ padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }}
             .tag {{ align-self: flex-start; font-size: 0.7rem; background: #333; padding: 4px 8px; border-radius: 4px; color: #aaa; margin-bottom: 10px; font-weight: bold; }}
-            
-            /* 强制标题只显示2行，固定高度 */
             .title {{ font-size: 1rem; margin: 0 0 15px 0; line-height: 1.4; height: 2.8em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }}
-            
-            /* 强制按钮沉底对齐 */
             .btn {{ margin-top: auto; display: block; text-align: center; background: var(--primary); color: white; text-decoration: none; padding: 10px; border-radius: 6px; font-weight: bold; transition: 0.2s; }}
             .btn:hover {{ filter: brightness(1.1); transform: scale(1.02); }}
-            
             footer {{ text-align: center; margin-top: 50px; padding: 20px; color: #666; font-size: 0.9rem; border-top: 1px solid #333; }}
             footer a {{ color: #888; text-decoration: none; margin: 0 10px; }}
             footer a:hover {{ color: var(--primary); }}
@@ -93,7 +120,7 @@ def generate_html(deals):
         </div>
         <div class="grid">{cards}</div>
         <footer>
-            <p>&copy; 2024 GamerLootDrop. All rights reserved.</p>
+            <p>&copy; 2026 GamerLootDrop. All rights reserved.</p>
             <a href="about.html">About Us</a> | 
             <a href="privacy.html">Privacy Policy</a> | 
             <a href="terms.html">Terms of Service</a>
