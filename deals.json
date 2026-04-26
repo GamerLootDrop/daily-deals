@@ -1,31 +1,20 @@
-<script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const container = document.getElementById('games-container');
-            
-            // 💡 重点：这里必须要加时间戳 v=... 否则浏览器会一直看旧的缓存
-            const fetchUrl = 'deals.json?v=' + new Date().getTime();
-            
-            fetch(fetchUrl)
-                .then(response => {
-                    if (!response.ok) throw new Error("无法加载数据");
-                    return response.json();
-                })
-                .then(data => {
-                    // 💡 这里会遍历机器人抓回来的所有数据（不管是 1 个还是 30 个）
-                    data.forEach(game => {
-                        const cardHTML = `
-                            <div class="card">
-                                <img class="card-img" src="${game.image || ''}" alt="${game.title}">
-                                <div class="card-content">
-                                    <span class="tag">${game.platform || 'PC'}</span>
-                                    <h3 class="title" title="${gameTitle}">${game.title}</h3>
-                                    <a href="${game.link}" target="_blank" class="btn">Claim Now</a>
-                                </div>
-                            </div>
-                        `;
-                        container.innerHTML += cardHTML;
-                    });
-                })
-                .catch(error => console.error("加载新游戏失败:", error));
-        });
-    </script>
+[
+    {
+        "title": "8AM (Steam) Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/8am-steam-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69ea52173784a.jpg"
+    },
+    {
+        "title": "911 Operator (Mobile) Giveaway",
+        "platform": "Android, iOS",
+        "link": "https://www.gamerpower.com/911-operator-mobile-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69ea385817824.jpg"
+    },
+    {
+        "title": "DOOMBLADE (Epic Games) Giveaway",
+        "platform": "PC, Epic Games Store",
+        "link": "https://www.gamerpower.com/doomblade-epic-games-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69ea3480810e8.jpg"
+    }
+]
