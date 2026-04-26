@@ -1,8 +1,182 @@
 [
-  {
-    "title": "8AM (Steam) Giveaway",
-    "platform": "PC, Steam",
-    "link": "https://www.gamerpower.com/8am-steam-giveaway",
-    "image": "https://www.gamerpower.com/offers/1/69ea52173784a.jpg"
-  }
+    {
+        "title": "8AM (Steam) Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/8am-steam-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69ea52173784a.jpg"
+    },
+    {
+        "title": "911 Operator (Mobile) Giveaway",
+        "platform": "Android, iOS",
+        "link": "https://www.gamerpower.com/911-operator-mobile-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69ea385817824.jpg"
+    },
+    {
+        "title": "DOOMBLADE (Epic Games) Giveaway",
+        "platform": "PC, Epic Games Store",
+        "link": "https://www.gamerpower.com/doomblade-epic-games-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69ea3480810e8.jpg"
+    },
+    {
+        "title": "Nocturnal (Steam) Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/nocturnal-steam-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69ea2977d040a.jpg"
+    },
+    {
+        "title": "Ashanti Protocol-Unmanned peacekeepers amidst conflict (Stove) Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/ashanti-protocol-unmanned-peacekeepers-amidst-conflict-pc-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/68dbed23943f2.jpg"
+    },
+    {
+        "title": "Aeonic (Steam) Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/aeonic-steam-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e9453dabd9d.jpg"
+    },
+    {
+        "title": "Flowerdrops (Itchio) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/flowerdrops-itchio-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e9062ec928b.jpg"
+    },
+    {
+        "title": "SurrounDead Poly Construction (Steam) Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/surroundead-poly-construction-steam-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e902c35651a.jpg"
+    },
+    {
+        "title": "The Whispering Valley (GOG) Giveaway",
+        "platform": "PC, GOG, DRM-Free",
+        "link": "https://www.gamerpower.com/the-whispering-valley-gog-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e778037bd0b.jpg"
+    },
+    {
+        "title": "Emily_ (itchio) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/emily-itchio-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e769fac1a28.jpg"
+    },
+    {
+        "title": "The Lost Painter (itchio) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/the-lost-painter-itchio-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e7686e9561b.jpg"
+    },
+    {
+        "title": "The Saint (itchio) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/the-saint-itchio-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e7677c90b06.jpg"
+    },
+    {
+        "title": "Arknights: Endfield Gift Pack Key Giveaway",
+        "platform": "PC, Playstation 5, Android, iOS",
+        "link": "https://www.gamerpower.com/arknights-endfield-gift-pack-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e2571643f8d.jpg"
+    },
+    {
+        "title": "Cthulhu: The Cosmic Abyss - Sanity Skin Pack (Steam) Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/cthulhu-the-cosmic-abyss-sanity-skin-pack-steam-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e111ab4dc83.jpg"
+    },
+    {
+        "title": "Super Animal Royale Bundle Key Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/super-animal-royale-bundle-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e110ed9597c.jpg"
+    },
+    {
+        "title": "GRASS Playtest Steam Key Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/grass-playtest-steam-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e11021033ba.jpg"
+    },
+    {
+        "title": "Idle Champions Lae'zel Key Giveaway",
+        "platform": "PC, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One, Android, iOS",
+        "link": "https://www.gamerpower.com/idle-champions-lae-zel-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69e10f2ba97f6.jpg"
+    },
+    {
+        "title": "Lihiman (itchio) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/lihiman-itchio-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69de855c94b1e.jpg"
+    },
+    {
+        "title": "Game club \"Waka-Waka\" (IndieGala) Giveaway",
+        "platform": "PC, DRM-Free",
+        "link": "https://www.gamerpower.com/game-club-waka-waka-pc-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/68a5f15b0319d.jpg"
+    },
+    {
+        "title": "FATAL FRAME / PROJECT ZERO: Mask of the Lunar Eclipse DLC Giveaway",
+        "platform": "PC, Steam, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One",
+        "link": "https://www.gamerpower.com/fatal-frame-project-zero-mask-of-the-lunar-eclipse-dlc-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69dce2cb554f4.jpg"
+    },
+    {
+        "title": "Deadswitch Combat: Soldier Bundle (Steam) Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/deadswitch-combat-soldier-bundle-steam-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69d44cc9b09a2.jpg"
+    },
+    {
+        "title": "Hero Wars: Polaris Gift Key Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/hero-wars-polaris-gift-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69cc1259d6b5e.jpg"
+    },
+    {
+        "title": "Sleep Demon (Itchio) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/sleep-demon-itchio-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69ca788f5d0d4.jpg"
+    },
+    {
+        "title": "Blood And Zombies (IndieGala) Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/blood-and-zombies-pc-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69c7ed7687ccc.jpg"
+    },
+    {
+        "title": "Star Trek Online: Corruption Gift Pack Key Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/star-trek-online-corruption-gift-pack-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/69a718ba231fc.jpg"
+    },
+    {
+        "title": "Blade and Soul NEO Anniversary Weapon Skin Key Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/blade-and-soul-neo-anniversary-weapon-skin-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/699f2c7ebf7f6.jpg"
+    },
+    {
+        "title": "Madness Inside (itch.io) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/madness-inside-itch-io-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/67c76007697b3.jpg"
+    },
+    {
+        "title": "Rose and Cross (Itch.io) Giveaway",
+        "platform": "PC, Itch.io, DRM-Free",
+        "link": "https://www.gamerpower.com/rose-and-cross-itch-io-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/6930a11f989ac.jpg"
+    },
+    {
+        "title": "Deadswitch Combat: Weapons Skins Steam Key Giveaway",
+        "platform": "PC, Steam",
+        "link": "https://www.gamerpower.com/deadswitch-combat-weapons-skins-steam-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/698b912713a1b.jpg"
+    },
+    {
+        "title": "KARDS Special Bundle Key Giveaway",
+        "platform": "PC",
+        "link": "https://www.gamerpower.com/kards-special-bundle-key-giveaway",
+        "image": "https://www.gamerpower.com/offers/1/698b92396a0fc.jpg"
+    }
 ]
