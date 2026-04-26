@@ -11,8 +11,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GamerLootDrop | Latest Free Steam Keys & PC Giveaways Daily</title>
-    <meta name="description" content="Get the latest free Steam keys, Epic Games giveaways, and mobile game loot. Updated every 24 hours.">
+    <title>GamerLootDrop | Get Free Steam Keys & PC Giveaways Daily</title>
+    <meta name="description" content="Instant alerts for free Steam keys, Epic Games giveaways, and PC gaming loot. Updated every 24 hours by AI.">
     
     <style>
         :root { --bg: #0f0f0f; --card: #1a1a1a; --primary: #00ff87; --hot: #ff4757; --text: #f1f2f6; --discord: #5865F2; }
@@ -39,7 +39,6 @@
         .filter-btn.active, .filter-btn:hover { background: var(--primary); color: #000; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        
         .card { background: var(--card); border-radius: 16px; overflow: hidden; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid #2f3542; display: flex; flex-direction: column; height: 100%; position: relative; }
         .card:hover { transform: translateY(-10px); border-color: var(--primary); }
         .card.featured { border: 2px solid var(--hot); box-shadow: 0 0 20px rgba(255, 71, 87, 0.2); animation: pulse 2s infinite; }
@@ -60,18 +59,18 @@
 <body>
     <div class="header">
         <h1>🎮 GamerLootDrop</h1>
-        <p>Your Automatic Gateway to Free Games & Deals</p>
+        <p>Your AI-Powered Gateway to Free Games & Premium Deals</p>
     </div>
 
     <div class="discord-banner">
-        <a href="https://discord.gg/8Wz5Dsk8" target="_blank" class="discord-btn">
+        <a href="https://discord.gg/GnBx7S9pWz" target="_blank" class="discord-btn">
             <svg width="24" height="24" viewBox="0 0 127.14 96.36" fill="currentColor"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.71,32.65-1.82,56.6.48,80.21a105.73,105.73,0,0,0,32.22,16.15,77.7,77.7,0,0,0,7.34-11.86,68.11,68.11,0,0,1-11.85-5.65c.3-.22.58-.45.86-.67a72.42,72.42,0,0,0,63.41,0c.28.22.56.45.86.67a67.91,67.91,0,0,1-11.85,5.65,77,77,0,0,0,7.34,11.86,105.14,105.14,0,0,0,32.22-16.15C129.5,50.28,125.09,26.56,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.07,65.69,84.69,65.69Z"/></svg>
-            JOIN OUR DISCORD (INSTANT ALERTS)
+            JOIN DISCORD (REAL-TIME ALERTS)
         </a>
     </div>
 
     <div class="filter-container">
-        <button class="filter-btn active" onclick="filterGames('all')">All Games</button>
+        <button class="filter-btn active" onclick="filterGames('all')">All Deals</button>
         <button class="filter-btn" onclick="filterGames('steam')">Steam</button>
         <button class="filter-btn" onclick="filterGames('epic')">Epic Games</button>
         <button class="filter-btn" onclick="filterGames('pc')">PC Store</button>
@@ -82,9 +81,9 @@
         <div class="card featured" data-platform="pc">
             <img class="card-img" src="https://media.rawg.io/media/games/082/082365507ff04d456c700157072d35db.jpg" alt="Forza Horizon 6">
             <div class="card-content">
-                <span class="tag" style="background: var(--hot); color: #fff;">🔥 TOP PRE-ORDER</span>
-                <h3 class="title">Forza Horizon 6 - Epic Pre-order Deal!</h3>
-                <a href="https://www.g2a.com/n/forza-6-deal" target="_blank" class="btn" style="background: var(--hot); color: #fff;">Get Deal Now</a>
+                <span class="tag" style="background: var(--hot); color: #fff;">🔥 MOST WANTED</span>
+                <h3 class="title">Forza Horizon 6 - Exclusive Pre-order Deal!</h3>
+                <a href="https://www.g2a.com/n/forza-6-deal" target="_blank" class="btn" style="background: var(--hot); color: #fff;">Check Deal</a>
             </div>
         </div>
     </div>
@@ -95,7 +94,7 @@
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
         </div>
-        <p style="margin-top:20px;">&copy; 2026 GamerLootDrop. Updated daily by AI.</p>
+        <p style="margin-top:20px;">&copy; 2026 GamerLootDrop. Automated by AI Bot.</p>
     </footer>
 
     <script>
@@ -103,39 +102,34 @@
 
         async function loadGames() {
             try {
-                // 加上时间戳 v=... 强制浏览器跳过缓存读取最新的 deals.json
                 const response = await fetch('deals.json?v=' + new Date().getTime());
                 allGamesData = await response.json();
-                console.log("Data loaded:", allGamesData.length, "games found.");
                 renderGames(allGamesData);
             } catch (err) {
-                console.error("Error loading games:", err);
+                console.log("Fetching latest loot...");
             }
         }
 
         function renderGames(games) {
             const grid = document.getElementById('game-grid');
-            // 保留第一个推荐位（Forza），清空后面的
             const featuredCard = grid.querySelector('.featured').outerHTML;
             grid.innerHTML = featuredCard;
 
             games.forEach(game => {
                 const card = document.createElement('div');
                 card.className = 'card';
-                
-                // 重点修复：将 JSON 里的 platforms 转为小写存入 data-platform 属性
                 const platformInfo = (game.platforms || "PC").toLowerCase();
                 card.setAttribute('data-platform', platformInfo);
                 
                 card.innerHTML = `
-                    <img class="card-img" src="${game.image}" alt="${game.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x170?text=Image+Loading...'">
+                    <img class="card-img" src="${game.image}" alt="${game.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x170?text=Loot+Image'">
                     <div class="card-content">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
                             <span class="tag">${game.platforms || 'PC'}</span>
                             <span style="color:var(--primary); font-size:0.8rem; font-weight:bold;">${game.worth || 'FREE'}</span>
                         </div>
                         <h3 class="title" title="${game.title}">${game.title}</h3>
-                        <p style="font-size:0.75rem; color:#888; margin-bottom:10px;">⏳ Ends: ${game.end_date || 'N/A'}</p>
+                        <p style="font-size:0.75rem; color:#888; margin-bottom:10px;">⏳ Ends: ${game.end_date || 'Limited Time'}</p>
                         <a href="${game.open_giveaway_url}" target="_blank" class="btn">Claim Now</a>
                     </div>
                 `;
@@ -152,10 +146,9 @@
                 if (platform === 'all') {
                     card.style.display = 'flex';
                 } else if (card.classList.contains('featured')) {
-                    card.style.display = 'flex'; // 推荐位始终显示
+                    card.style.display = 'flex';
                 } else {
                     const cardPlatform = card.getAttribute('data-platform') || "";
-                    // 模糊匹配逻辑，支持 "PC, Steam" 这种复合格式
                     card.style.display = cardPlatform.includes(platform.toLowerCase()) ? 'flex' : 'none';
                 }
             });
