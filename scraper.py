@@ -3,20 +3,19 @@ import json
 import time
 
 # ==========================================
-# 🚀 基础配置
+# 🚀 基础配置（确保推送响起来）
 # ==========================================
 DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1497842345406632027/E4gnmBOA-9lywCzs481kdGyxnuJ8dwjQF4qFQi9U5ahNuiaUXItT05Jz4RDOZavL-XNv"
 WEBSITE_URL = "https://gamerlootdrop.github.io/daily-deals/"
 
 def send_discord_notification(deal):
-    """发送 Discord 通知"""
     if not DISCORD_WEBHOOK_URL: return
     payload = {
         "embeds": [{
             "title": f"🎁 New Freebie: {deal['title']}",
             "description": f"Platform: **{deal['platform']}**\nCheck it on GamerLootDrop!",
             "url": WEBSITE_URL,
-            "color": 39423, # 翠绿色
+            "color": 39423,
             "image": {"url": deal['image']},
             "footer": {"text": "GamerLootDrop - Daily Deals"}
         }]
@@ -40,7 +39,7 @@ def scrape_deals():
                     "platform": game.get("platforms"),
                     "link": game.get("gamerpower_url"),
                     "image": game.get("thumbnail"),
-                    "worth": game.get("worth", "FREE") # 获取原价
+                    "worth": game.get("worth", "FREE")
                 })
             
             generate_html(deals)
@@ -52,7 +51,7 @@ def scrape_deals():
         print(f"⚠️ 出错: {e}")
 
 def generate_html(deals):
-    # 💰 恢复你的专属地平线广告位（带精准价格和链接）
+    # 💰 这里的链接和价格我已经帮你锁死了，绝对不会再变回主页
     sponsored_card = '''
         <div class="card" style="border-color: #ff4d4d; box-shadow: 0 0 15px rgba(255, 77, 77, 0.3);">
             <img class="card-img" src="https://gamerlootdrop.github.io/daily-deals/assets/fh6.jpg" alt="Forza Horizon 6" onerror="this.src='https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/header.jpg'">
