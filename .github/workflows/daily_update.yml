@@ -2,18 +2,21 @@ name: Daily Deals Update
 
 on:
   schedule:
-    # 设定在北京时间每天早上 9:00 运行 (UTC 1:00)
-    - cron: '0 1 * * *'
-  workflow_dispatch: # 允许你随时手动点击按钮更新
+    # 北京时间 09:15, 13:15, 18:15, 22:15 运行 (UTC 1, 5, 10, 14)
+    # 避开整点高峰，确保像原神码这种福利不漏掉
+    - cron: '15 1,5,10,14 * * *'
+  workflow_dispatch: # 允许随时手动强制更新
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # 赋予机器人写入权限，防止推送失败
+      contents: write 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -32,7 +35,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          # 自动添加所有变动文件（包括 deals.json）
           git add .
-          git commit -m "Auto-update deals and content" || exit 0
+          git commit -m "Auto-update: $(date +'%Y-%m-%d %H:%M:%S')" || exit 0
           git push
