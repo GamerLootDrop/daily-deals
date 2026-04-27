@@ -61,10 +61,14 @@
         .card-content { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
         .tag { align-self: flex-start; font-size: 0.75rem; background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 8px; color: var(--primary); margin-bottom: 12px; font-weight: bold; text-transform: uppercase; }
         .title { font-size: 1.1rem; margin: 0 0 15px 0; font-weight: 700; height: 2.8em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .btn { margin-top: auto; display: block; text-align: center; background: var(--primary); color: #000; text-decoration: none; padding: 12px; border-radius: 10px; font-weight: 800; transition: 0.3s; }
+        .btn { margin-top: auto; display: block; text-align: center; background: var(--primary); color: #000; text-decoration: none; padding: 12px; border-radius: 10px; font-weight: 800; border:none; cursor:pointer; transition: 0.3s; }
         .btn:hover { filter: brightness(1.2); letter-spacing: 1px; }
+        .btn.copied { background: #fff !important; color: #000 !important; }
+
+        /* 评论区样式 */
+        .comment-section { max-width: 1200px; margin: 60px auto 0; padding: 20px; background: #151515; border-radius: 16px; border: 1px solid #333; }
         
-        footer { text-align: center; margin-top: 80px; padding: 40px; color: #57606f; border-top: 1px solid #2f3542; }
+        footer { text-align: center; margin-top: 40px; padding: 40px; color: #57606f; border-top: 1px solid #2f3542; }
         .footer-links a { color: #a4b0be; text-decoration: none; margin: 0 15px; font-size: 0.9rem; }
         .footer-links a:hover { color: var(--primary); }
     </style>
@@ -105,6 +109,25 @@
         </div>
     </div>
 
+    <div class="comment-section">
+        <h2 style="color:var(--primary); margin-bottom: 20px; font-size: 1.5rem;">💬 Community Discussion</h2>
+        <script src="https://giscus.app/client.js"
+                data-repo="GamerLootDrop/daily-deals"
+                data-repo-id="R_kgDOSLkHPg"
+                data-category="General"
+                data-category-id="DIC_kwDOSLkHPs4C7x97"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="dark"
+                data-lang="zh-CN"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </div>
+
     <footer>
         <div class="footer-links">
             <a href="about.html">About</a>
@@ -116,6 +139,27 @@
 
     <script>
         let allGamesData = [];
+
+        // 核心跳转逻辑：处理复制并开启窗口
+        async function handleAction(url, isLoot, btn) {
+            if (!isLoot) {
+                window.open(url, '_blank');
+                return;
+            }
+            try {
+                await navigator.clipboard.writeText(url);
+                const oldText = btn.innerText;
+                btn.innerText = "✅ Link Copied!";
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerText = oldText;
+                    btn.classList.remove('copied');
+                    window.open(url, '_blank');
+                }, 600);
+            } catch (err) {
+                window.open(url, '_blank');
+            }
+        }
 
         async function loadGames() {
             try {
@@ -129,6 +173,7 @@
 
         function renderGames(games) {
             const grid = document.getElementById('game-grid');
+            // 保留 Featured 卡片
             const featuredCard = grid.querySelector('.featured').outerHTML;
             grid.innerHTML = featuredCard;
 
@@ -138,11 +183,11 @@
                 const platformInfo = (game.platforms || "PC").toLowerCase();
                 card.setAttribute('data-platform', platformInfo);
                 
-                // 识别礼包/代码逻辑
                 const titleLower = game.title.toLowerCase();
                 const isLoot = titleLower.includes('code') || titleLower.includes('pack') || titleLower.includes('key');
                 const tagColor = isLoot ? '#ffcc00' : 'var(--primary)';
                 const btnText = isLoot ? 'Get Loot/Code' : 'Claim Now';
+                const btnClass = isLoot ? 'btn copy-btn' : 'btn';
                 const btnStyle = isLoot ? 'style="background:#ffcc00;color:#000;"' : '';
 
                 card.innerHTML = `
@@ -154,7 +199,7 @@
                         </div>
                         <h3 class="title" title="${game.title}">${game.title}</h3>
                         <p style="font-size:0.75rem; color:#888; margin-bottom:10px;">⏳ Ends: ${game.end_date || 'Limited Time'}</p>
-                        <a href="${game.open_giveaway_url}" target="_blank" rel="noopener noreferrer" class="btn" ${btnStyle}>${btnText}</a>
+                        <button onclick="handleAction('${game.open_giveaway_url}', ${isLoot}, this)" class="${btnClass}" ${btnStyle}>${btnText}</button>
                     </div>
                 `;
                 grid.appendChild(card);
@@ -163,7 +208,8 @@
 
         function filterGames(platform) {
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            if(event) event.target.classList.add('active');
+            // 修正 event.target 的调用方式
+            if(window.event) window.event.target.classList.add('active');
 
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
