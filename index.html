@@ -100,7 +100,7 @@
             <div class="card-content">
                 <span class="tag" style="background: var(--hot); color: #fff;">🔥 MOST WANTED</span>
                 <h3 class="title">Forza Horizon 6 - Exclusive Pre-order Deal!</h3>
-                <a href="https://www.g2a.com/n/forza-6-deal" target="_blank" class="btn" style="background: var(--hot); color: #fff;">Check Deal</a>
+                <a href="https://www.g2a.com/n/forza-6-deal" target="_blank" rel="noopener noreferrer" class="btn" style="background: var(--hot); color: #fff;">Check Deal</a>
             </div>
         </div>
     </div>
@@ -138,13 +138,12 @@
                 const platformInfo = (game.platforms || "PC").toLowerCase();
                 card.setAttribute('data-platform', platformInfo);
                 
-                // --- 核心优化：识别是否为兑换码/礼包包 ---
+                // 识别礼包/代码逻辑
                 const titleLower = game.title.toLowerCase();
                 const isLoot = titleLower.includes('code') || titleLower.includes('pack') || titleLower.includes('key');
                 const tagColor = isLoot ? '#ffcc00' : 'var(--primary)';
                 const btnText = isLoot ? 'Get Loot/Code' : 'Claim Now';
-                const btnExtraStyle = isLoot ? 'style="background:#ffcc00;color:#000;"' : '';
-                // --------------------------------------
+                const btnStyle = isLoot ? 'style="background:#ffcc00;color:#000;"' : '';
 
                 card.innerHTML = `
                     <img class="card-img" src="${game.image}" alt="${game.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x170?text=Loot+Image'">
@@ -155,7 +154,7 @@
                         </div>
                         <h3 class="title" title="${game.title}">${game.title}</h3>
                         <p style="font-size:0.75rem; color:#888; margin-bottom:10px;">⏳ Ends: ${game.end_date || 'Limited Time'}</p>
-                        <a href="${game.open_giveaway_url}" target="_blank" rel="noopener noreferrer" class="btn" ${btnExtraStyle}>${btnText}</a>
+                        <a href="${game.open_giveaway_url}" target="_blank" rel="noopener noreferrer" class="btn" ${btnStyle}>${btnText}</a>
                     </div>
                 `;
                 grid.appendChild(card);
@@ -164,7 +163,7 @@
 
         function filterGames(platform) {
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if(event) event.target.classList.add('active');
 
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
